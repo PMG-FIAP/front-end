@@ -1,0 +1,145 @@
+# PRD - Sistema de Monitoramento de Alagamentos
+
+## 1. Visão Geral
+Um sistema web simples para reportar e visualizar alagamentos em uma região usando Google Maps. O sistema será desenvolvido usando apenas HTML, CSS e JavaScript vanilla, mantendo a simplicidade adequada para um projeto de primeiro semestre.
+
+## 2. Páginas Obrigatórias
+1. **index.html** (Página Inicial)
+   - Apresentação do projeto
+   - Link para o mapa de alagamentos
+   - Breve explicação do funcionamento
+
+2. **integrantes.html** (Quem Somos)
+   - Fotos e informações dos integrantes
+   - RMs e contatos
+   - Links para GitHub e LinkedIn
+   - Turma
+
+3. **faq.html** (Perguntas Frequentes)
+   - Perguntas comuns sobre o sistema
+   - Como usar o mapa
+   - Como reportar alagamentos
+
+4. **contato.html**
+   - Formulário de contato
+   - Validação em JavaScript
+   - Mensagens de feedback
+
+5. **mapa.html** (Solução Principal)
+   - Integração com Google Maps
+   - Interface para reportar alagamentos
+   - Visualização dos pontos de alagamento
+   - Círculos coloridos baseados na quantidade de reportes
+
+## 3. Estrutura de Arquivos
+```
+front/
+├── assets/
+│   └── images/      # Imagens e ícones
+├── css/
+│   ├── style.css    # Estilos globais
+│   ├── home.css     # Estilos da página inicial
+│   ├── integrantes.css
+│   ├── faq.css
+│   ├── contato.css
+│   └── mapa.css
+├── js/
+│   ├── main.js      # Funções globais
+│   └── mapa.js      # Lógica do mapa
+├── index.html
+├── integrantes.html
+├── faq.html
+├── contato.html
+└── mapa.html
+```
+
+## 4. Especificações Técnicas
+
+### 4.1 Design
+- **Paleta de Cores**: Tons de azul e cinza (remetendo à água e chuva)
+  - Azul principal: #1E88E5
+  - Azul escuro: #1565C0
+  - Cinza claro: #F5F5F5
+  - Cinza escuro: #424242
+  - Vermelho (alerta): #F44336
+  - Amarelo (atenção): #FFC107
+
+- **Fontes**:
+  - Principal: Arial, sans-serif
+  - Títulos: 'Roboto', sans-serif
+
+### 4.2 Responsividade
+Breakpoints:
+- Extra Small: @media (max-width: 600px)
+- Small: @media (min-width: 600px)
+- Medium: @media (min-width: 768px)
+- Large: @media (min-width: 992px)
+- Extra Large: @media (min-width: 1300px)
+
+### 4.3 Funcionalidades JavaScript
+1. **Validação de Formulários**
+   - Validação em tempo real
+   - Mensagens de erro dinâmicas
+   - Feedback visual
+
+2. **Manipulação do Mapa**
+   - Adicionar marcadores
+   - Calcular círculos baseado em reportes
+   - Salvar dados no localStorage
+   - Carregar dados salvos
+
+3. **Interatividade**
+   - Menu mobile
+   - Animações suaves
+   - Feedback visual nas ações
+
+## 5. Critérios de Avaliação
+- HTML Semântico (15 pontos)
+- Acessibilidade (5 pontos)
+- Quantidade de páginas (10 pontos)
+- Estilização (15 pontos)
+- Responsividade (30 pontos)
+- JavaScript (15 pontos)
+- Versionamento (10 pontos)
+
+## 6. Distribuição de Trabalho
+- Murilo Bastos (50%): Estrutura principal, mapa, JavaScript
+- Pedro Henrique (30%): Design, CSS, responsividade
+- Guilherme Lisboa (20%): Páginas de suporte, formulários
+
+## 7. Próximos Passos
+1. Limpar o repositório atual
+2. Configurar nova estrutura de arquivos
+3. Implementar páginas na ordem:
+   - Estrutura base (header/footer)
+   - Página inicial
+   - Página de integrantes
+   - FAQ e Contato
+   - Solução principal (mapa)
+
+## 8. Requisitos de Entrega
+- Uso exclusivo de HTML, CSS e JavaScript vanilla
+- Design responsivo para todos os breakpoints especificados
+- Implementação de acessibilidade
+- Versionamento no GitHub com commits frequentes
+- README.md completo com documentação
+- Código limpo e bem estruturado
+- Sem uso de frameworks ou bibliotecas externas (exceto Google Maps)
+
+## 9. Cronograma Sugerido
+1. Semana 1:
+   - Setup do projeto
+   - Estrutura base
+   - Página inicial
+   - Página de integrantes
+
+2. Semana 2:
+   - FAQ e Contato
+   - Implementação do mapa
+   - Funcionalidades JavaScript
+
+3. Semana 3:
+   - Testes e ajustes
+   - Responsividade
+   - Documentação
+   - Entrega final 
