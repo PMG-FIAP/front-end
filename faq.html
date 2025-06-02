@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - AlertaFlood</title>
+    
+    <!-- Estilos -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .faq {
+            padding: 60px 0;
+            background-color: white;
+        }
+
+        .faq h2 {
+            text-align: center;
+            color: #1565C0;
+            margin-bottom: 40px;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            background-color: #f5f5f5;
+            padding: 15px 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            color: #1565C0;
+            transition: background-color 0.3s;
+        }
+
+        .faq-question:hover {
+            background-color: #e3f2fd;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5em;
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-question::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 20px;
+            max-height: 1000px;
+        }
+
+        .faq-answer p {
+            color: #666;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        @media (max-width: 600px) {
+            .faq {
+                padding: 40px 0;
+            }
+
+            .faq-container {
+                padding: 0 15px;
+            }
+
+            .faq-question {
+                padding: 12px 15px;
+                font-size: 0.9em;
+            }
+
+            .faq-answer {
+                padding: 0 15px;
+            }
+
+            .faq-item.active .faq-answer {
+                padding: 15px;
+            }
+        }
+    </style>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                
+                question.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+                    
+                    // Fecha todos os itens
+                    faqItems.forEach(otherItem => {
+                        otherItem.classList.remove('active');
+                    });
+                    
+                    // Se o item clicado não estava ativo, abre ele
+                    if (!isActive) {
+                        item.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">AlertaFlood</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="mapa.html">Mapa</a></li>
+                    <li><a href="integrantes.html">Integrantes</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="faq">
+            <div class="container">
+                <h2>Perguntas Frequentes</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">Como posso reportar um alagamento?</div>
+                        <div class="faq-answer">
+                            <p>Para reportar um alagamento, acesse a página do mapa, navegue até a localização desejada e clique no ponto onde está ocorrendo o alagamento. O sistema automaticamente registrará a localização e o horário do reporte.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">O que significam as cores no mapa?</div>
+                        <div class="faq-answer">
+                            <p>As áreas em amarelo indicam regiões com até 3 reportes de alagamento. Áreas em vermelho indicam regiões com mais de 3 reportes, representando pontos mais críticos que requerem maior atenção.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">Os dados são atualizados em tempo real?</div>
+                        <div class="faq-answer">
+                            <p>Sim, os dados são atualizados em tempo real. Cada vez que um novo alagamento é reportado, o mapa é atualizado automaticamente, recalculando as áreas de risco.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">Posso editar ou remover um reporte?</div>
+                        <div class="faq-answer">
+                            <p>Atualmente, o sistema não permite a edição ou remoção de reportes. Isso é uma medida de segurança para manter a integridade dos dados. Se você notar alguma informação incorreta, entre em contato conosco.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">Como o sistema calcula as áreas de risco?</div>
+                        <div class="faq-answer">
+                            <p>O sistema agrupa os reportes que estão em um raio de 300 metros. Se houver mais de 3 reportes em uma mesma área, ela é marcada como área de alto risco (vermelho). Caso contrário, é marcada como área de atenção (amarelo).</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">Os dados são compartilhados com órgãos públicos?</div>
+                        <div class="faq-answer">
+                            <p>Atualmente, os dados são armazenados localmente no seu navegador. Não há compartilhamento automático com órgãos públicos. Esta é uma versão inicial do sistema, focada em demonstrar o conceito.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2025 AlertaFlood - Todos os direitos reservados</p>
+            <div class="footer-links">
+                <a href="integrantes.html">Integrantes</a>
+                <a href="faq.html">FAQ</a>
+                <a href="contato.html">Contato</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 
