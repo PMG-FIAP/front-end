@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integrantes - AlertaFlood</title>
+    
+    <!-- Estilos -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .integrantes {
+            padding: 60px 0;
+            background-color: white;
+        }
+
+        .integrantes h2 {
+            text-align: center;
+            color: #1565C0;
+            margin-bottom: 40px;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .integrantes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .integrante-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .integrante-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .integrante-foto {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            object-fit: cover;
+            border: 3px solid #1E88E5;
+        }
+
+        .integrante-info {
+            margin: 15px 0;
+        }
+
+        .integrante-info h3 {
+            color: #1565C0;
+            margin-bottom: 10px;
+        }
+
+        .integrante-info p {
+            color: #666;
+            margin: 5px 0;
+        }
+
+        .integrante-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .integrante-links a {
+            color: #1E88E5;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .integrante-links a:hover {
+            text-decoration: underline;
+        }
+
+        .integrante-links img {
+            width: 20px;
+            height: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .integrantes {
+                padding: 40px 0;
+            }
+
+            .integrantes-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .integrante-card {
+                max-width: 300px;
+                margin: 0 auto;
+            }
+        }
+    </style>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">AlertaFlood</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="mapa.html">Mapa</a></li>
+                    <li><a href="integrantes.html">Integrantes</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="integrantes">
+            <div class="container">
+                <h2>Nossa Equipe</h2>
+                <div class="integrantes-grid">
+                    <div class="integrante-card">
+                        <img src="assets/images/murilo.jpg" alt="Murilo Bastos" class="integrante-foto">
+                        <div class="integrante-info">
+                            <h3>Murilo Bastos</h3>
+                            <p>RM: 561287</p>
+                            <p>Turma: 1TDS</p>
+                            <p>Email: iam@murilobastos.com</p>
+                        </div>
+                        <div class="integrante-links">
+                            <a href="https://github.com/murilobast" target="_blank">
+                                <img src="assets/images/github.svg" alt="GitHub">
+                                GitHub
+                            </a>
+                            <a href="https://linkedin.com/in/murilobast" target="_blank">
+                                <img src="assets/images/linkedin.svg" alt="LinkedIn">
+                                LinkedIn
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="integrante-card">
+                        <img src="assets/images/pedro.jpg" alt="Pedro Henrique" class="integrante-foto">
+                        <div class="integrante-info">
+                            <h3>Pedro Henrique</h3>
+                            <p>RM: 562312</p>
+                            <p>Turma: 1TDS</p>
+                            <p>Email: opedro485@gmail.com</p>
+                        </div>
+                        <div class="integrante-links">
+                            <a href="https://github.com/pedrinzz10" target="_blank">
+                                <img src="assets/images/github.svg" alt="GitHub">
+                                GitHub
+                            </a>
+                            <a href="https://linkedin.com/in/pedrinzz10" target="_blank">
+                                <img src="assets/images/linkedin.svg" alt="LinkedIn">
+                                LinkedIn
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="integrante-card">
+                        <img src="assets/images/guilherme.jpg" alt="Guilherme Lisboa" class="integrante-foto">
+                        <div class="integrante-info">
+                            <h3>Guilherme Lisboa</h3>
+                            <p>RM: 565187</p>
+                            <p>Turma: 1TDS</p>
+                            <p>Email: guilisboadl@gmail.com</p>
+                        </div>
+                        <div class="integrante-links">
+                            <a href="https://github.com/guilisboa" target="_blank">
+                                <img src="assets/images/github.svg" alt="GitHub">
+                                GitHub
+                            </a>
+                            <a href="https://linkedin.com/in/guilisboa" target="_blank">
+                                <img src="assets/images/linkedin.svg" alt="LinkedIn">
+                                LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2025 AlertaFlood - Todos os direitos reservados</p>
+            <div class="footer-links">
+                <a href="integrantes.html">Integrantes</a>
+                <a href="faq.html">FAQ</a>
+                <a href="contato.html">Contato</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 
