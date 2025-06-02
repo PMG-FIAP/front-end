@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa de Alagamentos - AlertaFlood</title>
+    
+    <!-- Estilos -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        #mapa {
+            width: 100%;
+            height: calc(100vh - 140px); /* Altura total menos header e footer */
+            margin: 20px 0;
+        }
+
+        .mapa-container {
+            position: relative;
+        }
+
+        .mapa-info {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: white;
+            padding: 15px;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            z-index: 1;
+        }
+
+        .mapa-info h3 {
+            margin-bottom: 10px;
+            color: #1565C0;
+        }
+
+        .mapa-info ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .mapa-info li {
+            margin: 5px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .mapa-info .cor {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }
+
+        .cor-amarela {
+            background-color: #FFC107;
+        }
+
+        .cor-vermelha {
+            background-color: #F44336;
+        }
+
+        @media (max-width: 600px) {
+            #mapa {
+                height: calc(100vh - 200px);
+            }
+
+            .mapa-info {
+                position: static;
+                margin: 20px;
+            }
+        }
+    </style>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/mapa.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">AlertaFlood</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="mapa.html">Mapa</a></li>
+                    <li><a href="integrantes.html">Integrantes</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container mapa-container">
+            <div class="mapa-info">
+                <h3>Legenda</h3>
+                <ul>
+                    <li>
+                        <span class="cor cor-amarela"></span>
+                        <span>Área com até 3 alagamentos</span>
+                    </li>
+                    <li>
+                        <span class="cor cor-vermelha"></span>
+                        <span>Área com mais de 3 alagamentos</span>
+                    </li>
+                </ul>
+                <p style="margin-top: 10px; font-size: 0.9em;">
+                    Clique no mapa para adicionar um ponto de alagamento
+                </p>
+            </div>
+            <div id="mapa"></div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2024 AlertaFlood - Todos os direitos reservados</p>
+            <div class="footer-links">
+                <a href="integrantes.html">Integrantes</a>
+                <a href="faq.html">FAQ</a>
+                <a href="contato.html">Contato</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 
