@@ -3,10 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Monitoramento de Alagamentos</title>
-    <meta name="description" content="Sistema para reportar e monitorar alagamentos em sua região">
+    <title>AlertaFlood - Monitoramento de Alagamentos</title>
+    
+    <!-- Estilos -->
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/home.css">
+    <style>
+        .hero {
+            background: linear-gradient(rgba(30, 136, 229, 0.9), rgba(21, 101, 192, 0.9)),
+                        url('assets/images/hero.jpeg') center/cover;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .features {
+            padding: 60px 0;
+            background-color: white;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card h3 {
+            color: #1565C0;
+            margin: 15px 0;
+        }
+
+        .feature-card p {
+            color: #666;
+        }
+
+        @media (max-width: 600px) {
+            .hero {
+                padding: 60px 0;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .features {
+                padding: 40px 0;
+            }
+        }
+    </style>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
 </head>
 <body>
     <header>
@@ -27,27 +104,27 @@
     <main>
         <section class="hero">
             <div class="container">
-                <h1>Monitore Alagamentos em Sua Região</h1>
-                <p>Ajude a comunidade reportando pontos de alagamento e mantenha-se informado sobre áreas de risco.</p>
+                <h1>Monitore Alagamentos em Tempo Real</h1>
+                <p>Ajude sua comunidade reportando pontos de alagamento e mantenha todos informados sobre áreas de risco.</p>
                 <a href="mapa.html" class="btn">Ver Mapa</a>
             </div>
         </section>
 
         <section class="features">
             <div class="container">
-                <h2>Como Funciona</h2>
+                <h2 style="text-align: center; color: #1565C0; margin-bottom: 20px;">Como Funciona</h2>
                 <div class="features-grid">
                     <div class="feature-card">
                         <h3>Reporte</h3>
-                        <p>Informe pontos de alagamento em sua região através do mapa interativo.</p>
+                        <p>Clique no mapa para adicionar um ponto de alagamento em sua região.</p>
                     </div>
                     <div class="feature-card">
-                        <h3>Monitore</h3>
-                        <p>Acompanhe em tempo real as áreas afetadas por alagamentos.</p>
+                        <h3>Visualize</h3>
+                        <p>Acompanhe em tempo real os pontos de alagamento reportados.</p>
                     </div>
                     <div class="feature-card">
                         <h3>Alerta</h3>
-                        <p>Receba notificações sobre novos pontos de alagamento em sua região.</p>
+                        <p>Áreas com muitos reportes são destacadas em vermelho para alerta.</p>
                     </div>
                 </div>
             </div>
@@ -56,7 +133,7 @@
 
     <footer>
         <div class="container footer-content">
-            <p>&copy; 2024 AlertaFlood. Todos os direitos reservados.</p>
+            <p>&copy; 2024 AlertaFlood - Todos os direitos reservados</p>
             <div class="footer-links">
                 <a href="integrantes.html">Integrantes</a>
                 <a href="faq.html">FAQ</a>
