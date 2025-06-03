@@ -15,7 +15,7 @@ class MapaAlagamentos {
         const saoPaulo = { lat: -23.550520, lng: -46.633308 };
         
         this.map = new google.maps.Map(document.getElementById('mapa'), {
-            zoom: 12,
+            zoom: 14,
             center: saoPaulo,
             mapTypeId: 'roadmap'
         });
