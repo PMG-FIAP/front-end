@@ -108,7 +108,8 @@ class MapaAlagamentos {
                 fillOpacity: 0.35,
                 map: this.map,
                 center: utils.geo.calculateCenter(grupo),
-                radius: 300
+                radius: 300,
+                clickable: false
             });
             this.circles.push(circle);
         });
