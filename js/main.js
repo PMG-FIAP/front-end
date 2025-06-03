@@ -72,13 +72,7 @@ const utils = {
     }
 };
 
-// Fallback para utils caso não exista (para evitar erro no FAQ)
-if (typeof window.utils === 'undefined') {
-    window.utils = {
-        validateForm: () => ({ isValid: true, errors: {} }),
-        showMessage: () => {},
-    };
-}
+window.utils = utils;
 
 // Inicialização da aplicação
 document.addEventListener('DOMContentLoaded', function() {

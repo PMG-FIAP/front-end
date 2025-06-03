@@ -11,29 +11,6 @@
     <link rel="stylesheet" href="css/pages.css">
     <!-- Scripts -->
     <script src="js/main.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const faqItems = document.querySelectorAll('.faq-item');
-            
-            faqItems.forEach(item => {
-                const question = item.querySelector('.faq-question');
-                
-                question.addEventListener('click', () => {
-                    const isActive = item.classList.contains('active');
-                    
-                    // Fecha todos os itens
-                    faqItems.forEach(otherItem => {
-                        otherItem.classList.remove('active');
-                    });
-                    
-                    // Se o item clicado não estava ativo, abre ele
-                    if (!isActive) {
-                        item.classList.add('active');
-                    }
-                });
-            });
-        });
-    </script>
 </head>
 <body>
     <header>
@@ -119,6 +96,5 @@
             </div>
         </div>
     </footer>
-    <script src="js/main.js"></script>
 </body>
 </html> 
