@@ -72,5 +72,61 @@ const utils = {
     }
 };
 
-// Exporta as funções utilitárias
-window.utils = utils; 
+// Fallback para utils caso não exista (para evitar erro no FAQ)
+if (typeof window.utils === 'undefined') {
+    window.utils = {
+        validateForm: () => ({ isValid: true, errors: {} }),
+        showMessage: () => {},
+    };
+}
+
+// Inicialização da aplicação
+document.addEventListener('DOMContentLoaded', function() {
+    // Inicializa formulários
+    const forms = document.querySelectorAll('form');
+    forms.forEach(form => {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const validation = utils.validateForm(formData);
+            
+            if (validation.isValid) {
+                // Aqui você pode adicionar a lógica de envio do formulário
+                utils.showMessage('Mensagem enviada com sucesso! Em breve entraremos em contato.', 'success');
+                this.reset();
+            } else {
+                // Mostra erros de validação
+                Object.entries(validation.errors).forEach(([field, message]) => {
+                    const input = this.querySelector(`[name="${field}"]`);
+                    if (input) {
+                        utils.showMessage(message);
+                        input.focus();
+                    }
+                });
+            }
+        });
+    });
+
+    // Inicializa FAQ
+    const faqItems = document.querySelectorAll('.faq-item');
+    if (faqItems.length > 0) {
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                
+                // Fecha todos os itens
+                faqItems.forEach(otherItem => {
+                    otherItem.classList.remove('active');
+                });
+                
+                // Se o item clicado não estava ativo, abre ele
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+    }
+}); 
