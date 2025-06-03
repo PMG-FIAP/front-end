@@ -60,7 +60,7 @@ class MapaAlagamentos {
         const marker = new google.maps.Marker({
             position: { lat: alagamento.lat, lng: alagamento.lng },
             map: this.map,
-            title: `Alagamento reportado em ${new Date(alagamento.data).toLocaleString()}`
+            title: `Alagamento reportado em ${utils.date.formatDateTime(alagamento.data)}`
         });
 
         this.markers.push(marker);
@@ -84,7 +84,7 @@ class MapaAlagamentos {
                 fillColor: grupo.length > 3 ? '#F44336' : '#FFC107',
                 fillOpacity: 0.35,
                 map: this.map,
-                center: this.calcularCentro(grupo),
+                center: utils.geo.calculateCenter(grupo),
                 radius: 300 // 300 metros
             });
 
@@ -106,7 +106,7 @@ class MapaAlagamentos {
             this.alagamentos.forEach(outro => {
                 if (visitados.has(outro.id)) return;
 
-                const distancia = this.calcularDistancia(
+                const distancia = utils.geo.calculateDistance(
                     alagamento.lat, alagamento.lng,
                     outro.lat, outro.lng
                 );
@@ -121,30 +121,6 @@ class MapaAlagamentos {
         });
 
         return grupos;
-    }
-
-    // Calcula a distância entre dois pontos em quilômetros
-    calcularDistancia(lat1, lon1, lat2, lon2) {
-        const R = 6371; // Raio da Terra em km
-        const dLat = this.toRad(lat2 - lat1);
-        const dLon = this.toRad(lon2 - lon1);
-        const a = Math.sin(dLat/2) * Math.sin(dLat/2) +
-                 Math.cos(this.toRad(lat1)) * Math.cos(this.toRad(lat2)) * 
-                 Math.sin(dLon/2) * Math.sin(dLon/2);
-        const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-        return R * c;
-    }
-
-    // Converte graus para radianos
-    toRad(valor) {
-        return valor * Math.PI / 180;
-    }
-
-    // Calcula o centro de um grupo de pontos
-    calcularCentro(grupo) {
-        const lat = grupo.reduce((sum, p) => sum + p.lat, 0) / grupo.length;
-        const lng = grupo.reduce((sum, p) => sum + p.lng, 0) / grupo.length;
-        return { lat, lng };
     }
 
     // Atualiza o mapa com novos dados
