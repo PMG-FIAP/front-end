@@ -93,19 +93,23 @@ class MapaAlagamentos {
         // Agrupa alagamentos próximos
         const grupos = this.agruparAlagamentos();
 
-        // Cria círculos para cada grupo
         grupos.forEach(grupo => {
+            let color, fillColor;
+            if (grupo.length >= 4) {
+                color = fillColor = '#F44336'; // vermelho
+            } else {
+                color = fillColor = '#FFC107'; // amarelo
+            }
             const circle = new google.maps.Circle({
-                strokeColor: grupo.length > 3 ? '#F44336' : '#FFC107',
+                strokeColor: color,
                 strokeOpacity: 0.8,
                 strokeWeight: 2,
-                fillColor: grupo.length > 3 ? '#F44336' : '#FFC107',
+                fillColor: fillColor,
                 fillOpacity: 0.35,
                 map: this.map,
                 center: utils.geo.calculateCenter(grupo),
-                radius: 300 // 300 metros
+                radius: 300
             });
-
             this.circles.push(circle);
         });
     }
