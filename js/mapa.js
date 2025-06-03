@@ -1,3 +1,4 @@
+console.log(utils)
 // Classe principal para gerenciar o mapa e os pontos de alagamento
 class MapaAlagamentos {
     constructor() {
@@ -49,6 +50,9 @@ class MapaAlagamentos {
 
     // Carrega os alagamentos salvos
     carregarAlagamentos() {
+        // Limpa marcadores antigos
+        this.markers.forEach(marker => marker.setMap(null));
+        this.markers = [];
         this.alagamentos.forEach(alagamento => {
             this.criarMarcador(alagamento);
         });
@@ -63,7 +67,21 @@ class MapaAlagamentos {
             title: `Alagamento reportado em ${utils.date.formatDateTime(alagamento.data)}`
         });
 
+        // Permite remover o pin ao clicar
+        marker.addListener('click', () => {
+            if (confirm('Deseja remover este ponto de alagamento?')) {
+                this.removerAlagamento(alagamento.id);
+            }
+        });
+
         this.markers.push(marker);
+    }
+
+    // Remove um alagamento pelo id
+    removerAlagamento(id) {
+        this.alagamentos = this.alagamentos.filter(a => a.id !== id);
+        this.atualizarStorage();
+        this.atualizarMapa();
     }
 
     // Atualiza os círculos baseado na densidade de alagamentos
