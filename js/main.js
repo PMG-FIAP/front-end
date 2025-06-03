@@ -1,42 +1,3 @@
-// Definição do objeto utils global para uso em todo o sistema
-window.utils = window.utils || {};
-window.utils.date = window.utils.date || {
-    formatDateTime: (date) => new Date(date).toLocaleString('pt-BR'),
-};
-if (!window.utils.storage) {
-    window.utils.storage = {
-        set: (key, value) => {
-            try {
-                localStorage.setItem(key, JSON.stringify(value));
-                return true;
-            } catch (error) {
-                console.error('Erro ao salvar no localStorage:', error);
-                return false;
-            }
-        },
-        get: (key) => {
-            try {
-                const item = localStorage.getItem(key);
-                return item ? JSON.parse(item) : null;
-            } catch (error) {
-                console.error('Erro ao ler do localStorage:', error);
-                return null;
-            }
-        },
-        remove: (key) => {
-            try {
-                localStorage.removeItem(key);
-                return true;
-            } catch (error) {
-                console.error('Erro ao remover do localStorage:', error);
-                return false;
-            }
-        }
-    };
-}
-window.utils.validateForm = window.utils.validateForm || (() => ({ isValid: true, errors: {} }));
-window.utils.showMessage = window.utils.showMessage || (() => {});
-
 // Funções utilitárias para validação e manipulação do DOM
 const utils = {
     // Validação de formulários
@@ -63,6 +24,39 @@ const utils = {
         };
     },
 
+    // Manipulação do localStorage
+    storage: {
+        set: (key, value) => {
+            try {
+                localStorage.setItem(key, JSON.stringify(value));
+                return true;
+            } catch (error) {
+                console.error('Erro ao salvar no localStorage:', error);
+                return false;
+            }
+        },
+
+        get: (key) => {
+            try {
+                const item = localStorage.getItem(key);
+                return item ? JSON.parse(item) : null;
+            } catch (error) {
+                console.error('Erro ao ler do localStorage:', error);
+                return null;
+            }
+        },
+
+        remove: (key) => {
+            try {
+                localStorage.removeItem(key);
+                return true;
+            } catch (error) {
+                console.error('Erro ao remover do localStorage:', error);
+                return false;
+            }
+        }
+    },
+
     // Manipulação de mensagens de erro/sucesso
     showMessage: (message, type = 'error') => {
         const messageDiv = document.createElement('div');
@@ -75,8 +69,34 @@ const utils = {
         setTimeout(() => {
             messageDiv.remove();
         }, 3000);
+    },
+
+    // Funções de data e hora
+    date: {
+        formatDateTime: (date) => new Date(date).toLocaleString('pt-BR'),
+    },
+
+    // Funções de geolocalização
+    geo: {
+        calculateDistance: (lat1, lon1, lat2, lon2) => {
+            const R = 6371; // Raio da Terra em km
+            const dLat = (lat2 - lat1) * Math.PI / 180;
+            const dLon = (lon2 - lon1) * Math.PI / 180;
+            const a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+                     Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+                     Math.sin(dLon/2) * Math.sin(dLon/2);
+            const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+            return R * c;
+        },
+        calculateCenter: (points) => {
+            const lat = points.reduce((sum, p) => sum + p.lat, 0) / points.length;
+            const lng = points.reduce((sum, p) => sum + p.lng, 0) / points.length;
+            return { lat, lng };
+        }
     }
 };
+
+window.utils = utils;
 
 // Inicialização da aplicação
 document.addEventListener('DOMContentLoaded', function() {
