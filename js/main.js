@@ -3,35 +3,37 @@ window.utils = window.utils || {};
 window.utils.date = window.utils.date || {
     formatDateTime: (date) => new Date(date).toLocaleString('pt-BR'),
 };
-window.utils.storage = window.utils.storage || {
-    set: (key, value) => {
-        try {
-            localStorage.setItem(key, JSON.stringify(value));
-            return true;
-        } catch (error) {
-            console.error('Erro ao salvar no localStorage:', error);
-            return false;
+if (!window.utils.storage) {
+    window.utils.storage = {
+        set: (key, value) => {
+            try {
+                localStorage.setItem(key, JSON.stringify(value));
+                return true;
+            } catch (error) {
+                console.error('Erro ao salvar no localStorage:', error);
+                return false;
+            }
+        },
+        get: (key) => {
+            try {
+                const item = localStorage.getItem(key);
+                return item ? JSON.parse(item) : null;
+            } catch (error) {
+                console.error('Erro ao ler do localStorage:', error);
+                return null;
+            }
+        },
+        remove: (key) => {
+            try {
+                localStorage.removeItem(key);
+                return true;
+            } catch (error) {
+                console.error('Erro ao remover do localStorage:', error);
+                return false;
+            }
         }
-    },
-    get: (key) => {
-        try {
-            const item = localStorage.getItem(key);
-            return item ? JSON.parse(item) : null;
-        } catch (error) {
-            console.error('Erro ao ler do localStorage:', error);
-            return null;
-        }
-    },
-    remove: (key) => {
-        try {
-            localStorage.removeItem(key);
-            return true;
-        } catch (error) {
-            console.error('Erro ao remover do localStorage:', error);
-            return false;
-        }
-    }
-};
+    };
+}
 window.utils.validateForm = window.utils.validateForm || (() => ({ isValid: true, errors: {} }));
 window.utils.showMessage = window.utils.showMessage || (() => {});
 
