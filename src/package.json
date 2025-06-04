@@ -1,0 +1,16 @@
+{
+  "name": "src",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "minify": "npx cleancss -o ../css/style.css css/style.css && npx cleancss -o ../css/components.css css/components.css && npx cleancss -o ../css/pages.css css/pages.css && npx terser js/main.js -o ../js/main.js -c -m && npx terser js/mapa.js -o ../js/mapa.js -c -m"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "clean-css-cli": "^5.6.3",
+    "terser": "^5.41.0"
+  }
+}
