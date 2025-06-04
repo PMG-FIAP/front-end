@@ -1,0 +1,18 @@
+/* Form Validation */
+.form-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.form-group input.error,
+.form-group textarea.error {
+    border-color: #f44336;
+    background-color: #fff8f8;
+}
+
+.error-message {
+    color: #f44336;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: block;
+} 

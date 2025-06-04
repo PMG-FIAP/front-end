@@ -1,0 +1,42 @@
+/* Messages */
+.message {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    padding: 1rem 1.5rem;
+    border-radius: 4px;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    transform: translateX(120%);
+    transition: transform 0.3s ease-out;
+    z-index: 1000;
+    max-width: 90%;
+}
+
+.message.show {
+    transform: translateX(0);
+}
+
+.message-icon {
+    font-size: 1.25rem;
+    line-height: 1;
+}
+
+.message-error {
+    border-left: 4px solid #f44336;
+}
+
+.message-error .message-icon {
+    color: #f44336;
+}
+
+.message-success {
+    border-left: 4px solid #4caf50;
+}
+
+.message-success .message-icon {
+    color: #4caf50;
+} 
