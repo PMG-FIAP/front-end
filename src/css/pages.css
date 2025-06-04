@@ -2,7 +2,7 @@
 .hero {
     background: linear-gradient(rgba(30, 136, 229, 0.7), rgba(21, 101, 192, 0.7)), url('../assets/images/hero.jpg') center/cover no-repeat;
     color: white;
-    padding: 4rem 0;
+    padding: 8rem 0 4rem;
     text-align: center;
     position: relative;
 }
