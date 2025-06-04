@@ -35,49 +35,49 @@
         </div>
     </section>
 
-    <main>
+    <main role="main">
         <section class="faq">
             <div class="container">
                 <h2>Perguntas Frequentes</h2>
                 <div class="faq-container">
                     <div class="faq-item">
-                        <div class="faq-question">Como posso reportar um alagamento?</div>
-                        <div class="faq-answer">
+                        <div class="faq-question" role="button" tabindex="0" aria-expanded="false" aria-controls="faq1-answer" id="faq1-question">Como posso reportar um alagamento?</div>
+                        <div class="faq-answer" role="region" id="faq1-answer" aria-labelledby="faq1-question">
                             <p>Para reportar um alagamento, acesse a página do mapa, navegue até a localização desejada e clique no ponto onde está ocorrendo o alagamento. O sistema automaticamente registrará a localização e o horário do reporte.</p>
                         </div>
                     </div>
 
                     <div class="faq-item">
-                        <div class="faq-question">O que significam as cores no mapa?</div>
-                        <div class="faq-answer">
+                        <div class="faq-question" role="button" tabindex="0" aria-expanded="false" aria-controls="faq2-answer" id="faq2-question">O que significam as cores no mapa?</div>
+                        <div class="faq-answer" role="region" id="faq2-answer" aria-labelledby="faq2-question">
                             <p>As áreas em amarelo indicam regiões com até 3 reportes de alagamento. Áreas em vermelho indicam regiões com mais de 3 reportes, representando pontos mais críticos que requerem maior atenção.</p>
                         </div>
                     </div>
 
                     <div class="faq-item">
-                        <div class="faq-question">Os dados são atualizados em tempo real?</div>
-                        <div class="faq-answer">
+                        <div class="faq-question" role="button" tabindex="0" aria-expanded="false" aria-controls="faq3-answer" id="faq3-question">Os dados são atualizados em tempo real?</div>
+                        <div class="faq-answer" role="region" id="faq3-answer" aria-labelledby="faq3-question">
                             <p>Sim, os dados são atualizados em tempo real. Cada vez que um novo alagamento é reportado, o mapa é atualizado automaticamente, recalculando as áreas de risco.</p>
                         </div>
                     </div>
 
                     <div class="faq-item">
-                        <div class="faq-question">Posso editar ou remover um reporte?</div>
-                        <div class="faq-answer">
+                        <div class="faq-question" role="button" tabindex="0" aria-expanded="false" aria-controls="faq4-answer" id="faq4-question">Posso editar ou remover um reporte?</div>
+                        <div class="faq-answer" role="region" id="faq4-answer" aria-labelledby="faq4-question">
                             <p>Atualmente, o sistema não permite a edição ou remoção de reportes. Isso é uma medida de segurança para manter a integridade dos dados. Se você notar alguma informação incorreta, entre em contato conosco.</p>
                         </div>
                     </div>
 
                     <div class="faq-item">
-                        <div class="faq-question">Como o sistema calcula as áreas de risco?</div>
-                        <div class="faq-answer">
+                        <div class="faq-question" role="button" tabindex="0" aria-expanded="false" aria-controls="faq5-answer" id="faq5-question">Como o sistema calcula as áreas de risco?</div>
+                        <div class="faq-answer" role="region" id="faq5-answer" aria-labelledby="faq5-question">
                             <p>O sistema agrupa os reportes que estão em um raio de 300 metros. Se houver mais de 3 reportes em uma mesma área, ela é marcada como área de alto risco (vermelho). Caso contrário, é marcada como área de atenção (amarelo).</p>
                         </div>
                     </div>
 
                     <div class="faq-item">
-                        <div class="faq-question">Os dados são compartilhados com órgãos públicos?</div>
-                        <div class="faq-answer">
+                        <div class="faq-question" role="button" tabindex="0" aria-expanded="false" aria-controls="faq6-answer" id="faq6-question">Os dados são compartilhados com órgãos públicos?</div>
+                        <div class="faq-answer" role="region" id="faq6-answer" aria-labelledby="faq6-question">
                             <p>Atualmente, os dados são armazenados localmente no seu navegador. Não há compartilhamento automático com órgãos públicos. Esta é uma versão inicial do sistema, focada em demonstrar o conceito.</p>
                         </div>
                     </div>
@@ -90,9 +90,9 @@
         <div class="container footer-content">
             <p>&copy; 2025 AlertaFlood - Todos os direitos reservados</p>
             <div class="footer-links">
-                <a href="integrantes.html">Integrantes</a>
-                <a href="faq.html">FAQ</a>
-                <a href="contato.html">Contato</a>
+                <a href="integrantes.html" aria-label="Página de integrantes">Integrantes</a>
+                <a href="faq.html" aria-label="Página de perguntas frequentes">FAQ</a>
+                <a href="contato.html" aria-label="Página de contato">Contato</a>
             </div>
         </div>
     </footer>
