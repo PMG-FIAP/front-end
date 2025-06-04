@@ -140,12 +140,12 @@
     padding: 28px 20px 20px 20px;
     text-align: center;
     box-shadow: 0 2px 8px rgba(30,136,229,0.08);
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s cubic-bezier(0.4,0,0.2,1), box-shadow 0.3s cubic-bezier(0.4,0,0.2,1);
 }
 
 .integrante-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 24px rgba(30,136,229,0.13);
+    transform: translateY(-18px) scale(1.03);
+    box-shadow: 0 12px 32px rgba(30,136,229,0.18);
 }
 
 .integrante-foto {

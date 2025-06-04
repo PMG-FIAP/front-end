@@ -3,6 +3,12 @@ header {
     background-color: #1E88E5;
     padding: 1rem 0;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: padding 0.3s cubic-bezier(0.4,0,0.2,1), box-shadow 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+
+header.shrink {
+    padding: 0.4rem 0;
+    box-shadow: 0 4px 16px rgba(30,136,229,0.13);
 }
 
 .header-container {
@@ -16,6 +22,11 @@ header {
     font-size: 1.5rem;
     text-decoration: none;
     font-weight: bold;
+    transition: font-size 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+
+header.shrink .logo {
+    font-size: 1.1rem;
 }
 
 /* Navegação */
