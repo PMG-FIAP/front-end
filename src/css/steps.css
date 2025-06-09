@@ -1,0 +1,47 @@
+/* Steps Section (Como Usar o AlertaFlood) */
+.steps {
+    background: #f5faff;
+    padding: 60px 0;
+}
+.steps .section-title {
+    text-align: center;
+    color: #1565C0;
+    margin-bottom: 40px;
+}
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.step-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(30,136,229,0.07);
+    padding: 32px 20px 24px 20px;
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.step-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(30,136,229,0.13);
+}
+.step-number {
+    display: inline-block;
+    background: #1565C0;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    line-height: 38px;
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+}
+@media (max-width: 700px) {
+    .steps-grid {
+        grid-template-columns: 1fr;
+    }
+} 
