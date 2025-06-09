@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "minify": "npx cleancss -o ../css/style.css css/*.css && npx terser js/main.js -o ../js/main.js -c -m && npx terser js/mapa.js -o ../js/mapa.js -c -m"
+    "minify:chat": "npx terser js/chat.js -o ../js/chat.js -c -m",
+    "minify:main": "npx terser js/main.js -o ../js/main.js -c -m",
+    "minify:mapa": "npx terser js/mapa.js -o ../js/mapa.js -c -m",
+    "minify:style": "npx cleancss -o ../css/style.css css/*.css",
+    "minify": "npm run minify:chat && npm run minify:main && npm run minify:mapa && npm run minify:style"
   },
   "keywords": [],
   "author": "",
